@@ -1,0 +1,406 @@
+/* ==========================================================================
+   VARIÁVEIS DE COR E TIPOGRAFIA
+   Mude só estas variáveis para trocar toda a paleta do site.
+   A ideia (como no Homestuck original) é: fundo preto, texto claro,
+   fonte monoespaçada em tudo, e um único tom de verde-musgo como
+   destaque (links, bordas, botões).
+   ========================================================================== */
+:root {
+  --cor-fundo:        #000000;
+  --cor-fundo-painel: #0d0d0d;
+  --cor-texto:        #d8d8d0;
+  --cor-texto-fraco:  #7a7a72;
+  --cor-destaque:     #7ea15a;   /* verde musgo, tom "grist" */
+  --cor-destaque-forte:#a8c98a;
+  --cor-borda:        #333329;
+  --cor-borda-placeholder: #55554a;
+
+  --fonte-base: "Courier New", Courier, monospace;
+
+  --largura-coluna: 650px;
+}
+
+/* Reset simples ---------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  font-family: var(--fonte-base);
+  line-height: 1.5;
+  padding-bottom: 3rem;
+}
+
+a {
+  color: var(--cor-destaque-forte);
+  text-decoration: none;
+}
+a:hover,
+a:focus {
+  text-decoration: underline;
+  color: var(--cor-destaque);
+}
+
+/* Acessibilidade: foco visível em todo elemento navegável ---------------- */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+[contenteditable]:focus-visible {
+  outline: 2px solid var(--cor-destaque);
+  outline-offset: 2px;
+}
+
+/* Respeita quem prefere menos animação ------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* ==========================================================================
+   CABEÇALHO
+   ========================================================================== */
+.site-header {
+  max-width: var(--largura-coluna);
+  margin: 0 auto;
+  padding: 2rem 1rem 1rem;
+  text-align: center;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.logo-link {
+  display: inline-block;
+}
+
+/* Placeholder do logo: troque por uma <img> quando tiver a arte final.
+   O tamanho do logo é definido aqui: mude width/height para o tamanho
+   que quiser (ex: 120px em vez de 200px). */
+.logo-placeholder {
+  width: 220px;
+  height: 250px;
+  margin: 0 auto 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed var(--cor-borda-placeholder);
+  color: var(--cor-texto-fraco);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+/* Se você colocar uma <img> DENTRO da .logo-placeholder (no lugar do
+   texto "LOGO AQUI"), esta regra faz a imagem se encaixar na caixa
+   acima sem esticar nem cortar, não importa o tamanho do arquivo
+   original. */
+.logo-placeholder img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.site-title {
+  font-size: 1.8rem;
+  letter-spacing: 0.05em;
+  margin: 0.2rem 0;
+  color: var(--cor-destaque-forte);
+}
+
+.site-subtitle {
+  color: var(--cor-texto-fraco);
+  margin: 0 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================================
+   BARRA DE MODO DE EDIÇÃO
+   ========================================================================== */
+.edit-toolbar {
+  max-width: var(--largura-coluna);
+  margin: 0.75rem auto;
+  padding: 0 1rem;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.edit-toolbar button {
+  background: transparent;
+  color: var(--cor-texto-fraco);
+  border: 1px solid var(--cor-borda);
+  font-family: var(--fonte-base);
+  font-size: 0.8rem;
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+}
+
+.edit-toolbar button:hover {
+  border-color: var(--cor-destaque);
+  color: var(--cor-destaque-forte);
+}
+
+/* Quando o modo de edição está ativo, o botão principal fica em destaque */
+.edit-toolbar button.active {
+  background: var(--cor-destaque);
+  color: #06140a;
+  border-color: var(--cor-destaque);
+}
+
+/* Marca visualmente os campos editáveis somente durante o modo de edição */
+body.modo-edicao [contenteditable="true"] {
+  outline: 1px dashed var(--cor-destaque);
+  outline-offset: 3px;
+  cursor: text;
+  background: rgba(126, 161, 90, 0.06);
+}
+
+/* ==========================================================================
+   ÁREA DA PÁGINA DA HQ
+   ========================================================================== */
+.comic-page {
+  max-width: var(--largura-coluna);
+  margin: 1.5rem auto 0;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.page-title {
+  font-size: 1.1rem;
+  color: var(--cor-texto);
+  margin: 1rem 0 0.75rem;
+}
+
+/* Moldura ao redor do placeholder, imitando o "quadro" do MSPA ---------- */
+.panel-frame {
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-fundo-painel);
+  padding: 6px;
+  display: inline-block;
+  max-width: 100%;
+}
+
+/* --------------------------------------------------------------------------
+   PLACEHOLDER DE IMAGEM
+   Isto é só uma caixa vazia. Quando você tiver a imagem final da
+   página, substitua esta div (ou o conteúdo dela) por:
+     <img src="paginas/001.png" alt="descrição da cena">
+   O tamanho é definido por --largura-painel/--altura-painel, que o
+   script.js também usa para exibir a dica "650 × 450" etc.
+   -------------------------------------------------------------------------- */
+.panel-placeholder {
+  width: 650px;
+  max-width: 100%;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 2px dashed var(--cor-borda-placeholder);
+  color: var(--cor-texto-fraco);
+  background:
+    repeating-linear-gradient(
+      45deg,
+      rgba(255,255,255,0.02),
+      rgba(255,255,255,0.02) 10px,
+      transparent 10px,
+      transparent 20px
+    );
+}
+
+.placeholder-icon {
+  font-size: 2.5rem;
+  opacity: 0.6;
+}
+
+.placeholder-text {
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+}
+
+.placeholder-hint {
+  font-size: 0.75rem;
+  color: var(--cor-texto-fraco);
+  opacity: 0.8;
+}
+
+/* Imagem real da página, quando data.js define um caminho em "imagem".
+   Ela ocupa o lugar do placeholder (que fica escondido nesse caso). */
+.panel-img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Texto de narração abaixo do painel, como as legendas do Homestuck ----- */
+.page-text {
+  max-width: 100%;
+  margin: 1rem auto 0;
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-left: 3px solid var(--cor-destaque);
+  background: var(--cor-fundo-painel);
+  min-height: 1.5em;
+  white-space: pre-wrap;
+}
+
+/* ==========================================================================
+   NAVEGAÇÃO ENTRE PÁGINAS (setas e número de página)
+   ========================================================================== */
+.page-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+  font-size: 0.9rem;
+}
+
+.nav-btn {
+  background: transparent;
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  font-family: var(--fonte-base);
+  font-size: 1rem;
+  min-width: 2.2rem;
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+}
+
+.nav-btn:hover:not(:disabled) {
+  border-color: var(--cor-destaque);
+  color: var(--cor-destaque-forte);
+}
+
+.nav-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.page-indicator {
+  color: var(--cor-texto-fraco);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.page-jump-input {
+  width: 3.2rem;
+  background: var(--cor-fundo-painel);
+  border: 1px solid var(--cor-borda);
+  color: var(--cor-texto);
+  font-family: var(--fonte-base);
+  text-align: center;
+  padding: 0.15rem;
+}
+
+.archive-link {
+  display: inline-block;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   RODAPÉ
+   ========================================================================== */
+.site-footer {
+  max-width: var(--largura-coluna);
+  margin: 2.5rem auto 0;
+  padding: 1rem;
+  text-align: center;
+  color: var(--cor-texto-fraco);
+  font-size: 0.8rem;
+  border-top: 1px solid var(--cor-borda);
+}
+
+/* ==========================================================================
+   PÁGINA DE ARQUIVO (archive.html)
+   ========================================================================== */
+.archive-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 3rem;
+}
+
+.archive-page h1 {
+  text-align: center;
+  color: var(--cor-destaque-forte);
+}
+
+.archive-back-link {
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.archive-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 1px solid var(--cor-borda);
+}
+
+.archive-list li {
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.archive-list a {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 0.6rem 0.25rem;
+  color: var(--cor-texto);
+}
+
+.archive-list a:hover {
+  background: rgba(126, 161, 90, 0.08);
+  text-decoration: none;
+}
+
+.archive-num {
+  color: var(--cor-texto-fraco);
+  min-width: 3ch;
+  text-align: right;
+}
+
+.archive-thumb {
+  width: 48px;
+  height: 32px;
+  flex: none;
+  border: 1px dashed var(--cor-borda-placeholder);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  color: var(--cor-texto-fraco);
+}
+
+.archive-title {
+  flex: 1;
+}
+
+/* ==========================================================================
+   RESPONSIVO (telas pequenas)
+   ========================================================================== */
+@media (max-width: 480px) {
+  .panel-placeholder {
+    height: 300px;
+  }
+
+  .site-title {
+    font-size: 1.4rem;
+  }
+
+  .page-indicator {
+    font-size: 0.8rem;
+  }
+}

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>1 ANO</title>
+
+<!-- ======================================================================
+     FOLHA DE ESTILO
+     Todo o visual (cores, fontes, tamanhos) fica no style.css.
+     ====================================================================== -->
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ====================================================================
+       CABEÇALHO DO SITE
+       Aqui fica o "logo" do webcomic. Troque o texto ou coloque uma
+       imagem dentro da div.logo-placeholder (ela já está preparada
+       para receber uma <img> no lugar do texto "LOGO AQUI").
+       ==================================================================== -->
+  <header class="site-header">
+    <a href="index.html" class="logo-link">
+      <div class="logo-placeholder" id="logoPlaceholder">
+      <img src="Imagens/1055599909601087.jpeg"><br>
+      </div>
+    </a>
+    <h1 class="site-title" id="siteTitle" contenteditable="true" data-edit-key="siteTitle">
+      MEU WEBCOMIC
+    </h1>
+    <p class="site-subtitle" id="siteSubtitle" contenteditable="true" data-edit-key="siteSubtitle">
+      
+    </p>
+  </header>
+
+  <!-- ====================================================================
+       BOTÃO DE MODO DE EDIÇÃO
+       Ao clicar, todo texto editável do site vira editável na hora
+       (igual "contenteditable"). As alterações são salvas no
+       localStorage do navegador, então persistem ao recarregar a
+       página (mas só nesse computador/navegador).
+       ==================================================================== -->
+  <div class="edit-toolbar">
+    <button id="toggleEditBtn" type="button">✎ ativar modo de edição</button>
+    <button id="resetBtn" type="button" title="Apaga todas as edições salvas e volta ao texto original">
+      ↺ restaurar textos originais
+    </button>
+  </div>
+
+  <!-- ====================================================================
+       ÁREA PRINCIPAL DA TIRA / PÁGINA DA HQ
+       O JS (script.js) preenche o número da página, o placeholder de
+       imagem e o texto de narração de acordo com a página atual.
+       ==================================================================== -->
+  <main class="comic-page">
+
+    <!-- Navegação de cima (igual ao site do Homestuck: números e setas) -->
+    <nav class="page-nav top-nav" aria-label="Navegação da HQ">
+      <button class="nav-btn" id="firstBtnTop" title="Primeira página">&laquo;</button>
+      <button class="nav-btn" id="prevBtnTop" title="Página anterior">&lsaquo;</button>
+      <span class="page-indicator">
+        Página
+        <input type="text" id="pageJumpInputTop" class="page-jump-input" aria-label="Ir para a página número">
+        de <span id="totalPagesTop">0</span>
+      </span>
+      <button class="nav-btn" id="nextBtnTop" title="Próxima página">&rsaquo;</button>
+      <button class="nav-btn" id="lastBtnTop" title="Última página">&raquo;</button>
+    </nav>
+
+    <!-- Título da página atual (editável) -->
+    <h2 class="page-title" id="pageTitle"></h2>
+
+    <!-- ==================================================================
+         PLACEHOLDER DA IMAGEM DA PÁGINA
+         Isso substitui o "painel" do Homestuck. Nada aqui é gerado:
+         é só uma caixa vazia com uma borda tracejada e um texto
+         indicativo, esperando você trocar por uma <img> de verdade.
+         Veja o comentário dentro do script.js na função
+         renderPage() para saber exatamente onde colar a sua imagem.
+         ================================================================== -->
+    <div class="panel-frame">
+      <div class="panel-placeholder" id="panelPlaceholder">
+        <span class="placeholder-icon">🖼</span>
+        <span class="placeholder-text">PLACEHOLDER DE IMAGEM</span>
+        <span class="placeholder-hint" id="placeholderDims"></span>
+      </div>
+    </div>
+
+    <!-- Texto de narração/legenda abaixo do painel, como no Homestuck -->
+    <div class="page-text" id="pageText" contenteditable="true"></div>
+
+    <!-- Navegação de baixo (repetida, como no site original) -->
+    <nav class="page-nav bottom-nav" aria-label="Navegação da HQ">
+      <button class="nav-btn" id="firstBtnBottom" title="Primeira página">&laquo;</button>
+      <button class="nav-btn" id="prevBtnBottom" title="Página anterior">&lsaquo;</button>
+      <span class="page-indicator">
+        Página
+        <input type="text" id="pageJumpInputBottom" class="page-jump-input" aria-label="Ir para a página número">
+        de <span id="totalPagesBottom">0</span>
+      </span>
+      <button class="nav-btn" id="nextBtnBottom" title="Próxima página">&rsaquo;</button>
+      <button class="nav-btn" id="lastBtnBottom" title="Última página">&raquo;</button>
+    </nav>
+
+    <a href="archive.html" class="archive-link">.</a>
+
+  </main>
+
+  <footer class="site-footer">
+  </footer>
+
+  <!-- ====================================================================
+       SCRIPT PRINCIPAL
+       Toda a lógica de navegação, dados das páginas e edição de
+       texto está comentada em detalhe dentro de script.js.
+       ==================================================================== -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
