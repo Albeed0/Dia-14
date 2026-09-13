@@ -6,10 +6,10 @@
    destaque (links, bordas, botões).
    ========================================================================== */
 :root {
-  --cor-fundo:        #000000;
-  --cor-fundo-painel: #0d0d0d;
+  --cor-fundo:        #6682a3;
+  --cor-fundo-painel: #4a414e;
   --cor-texto:        #d8d8d0;
-  --cor-texto-fraco:  #7a7a72;
+  --cor-texto-fraco:  #000000;
   --cor-destaque:     #7ea15a;   /* verde musgo, tom "grist" */
   --cor-destaque-forte:#a8c98a;
   --cor-borda:        #333329;
@@ -18,6 +18,16 @@
   --fonte-base: "Courier New", Courier, monospace;
 
   --largura-coluna: 650px;
+
+  /* As 7 cores do arco-íris, em tom pastel (estilo blog dos anos 2000).
+     Troque qualquer uma delas aqui se quiser cores diferentes. */
+  --arco-1: #ffb3ba; /* vermelho pastel */
+  --arco-2: #ffdfba; /* laranja pastel */
+  --arco-3: #fffab3; /* amarelo pastel */
+  --arco-4: #baffc9; /* verde pastel */
+  --arco-5: #bae1ff; /* azul pastel */
+  --arco-6: #d3baff; /* anil pastel */
+  --arco-7: #ffbaf0; /* violeta pastel */
 }
 
 /* Reset simples ---------------------------------------------------------- */
@@ -31,11 +41,33 @@ html, body {
 }
 
 body {
-  background: var(--cor-fundo);
+  /* Cor de partida (usada caso a animação não rode, ex: navegador com
+     "reduzir movimento" ativado — veja a media query mais abaixo). */
+  background-color: var(--arco-1);
+
+  /* A animação abaixo faz o fundo alternar pelas 7 cores do arco-íris,
+     em tom pastel. Para mudar a velocidade, troque os "21s" (duração de
+     um ciclo completo) por outro valor — quanto maior, mais devagar. */
+  animation: arco-iris-fundo 15s ease-in-out infinite;
+
   color: var(--cor-texto);
   font-family: var(--fonte-base);
   line-height: 1.5;
   padding-bottom: 3rem;
+}
+
+/* Ciclo de cores do fundo: uma parada para cada cor do arco-íris, e a
+   última parada (100%) repete a primeira cor, para o loop ficar suave
+   (sem "salto" perceptível quando a animação reinicia). */
+@keyframes arco-iris-fundo {
+  0%   { background-color: var(--arco-1); }
+  14%  { background-color: var(--arco-2); }
+  28%  { background-color: var(--arco-3); }
+  42%  { background-color: var(--arco-4); }
+  57%  { background-color: var(--arco-5); }
+  71%  { background-color: var(--arco-6); }
+  85%  { background-color: var(--arco-7); }
+  100% { background-color: var(--arco-1); }
 }
 
 a {
@@ -73,7 +105,9 @@ input:focus-visible,
   margin: 0 auto;
   padding: 2rem 1rem 1rem;
   text-align: center;
-  border-bottom: 1px solid var(--cor-borda);
+  background: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
+  border-top: none;
 }
 
 .logo-link {
@@ -84,8 +118,8 @@ input:focus-visible,
    O tamanho do logo é definido aqui: mude width/height para o tamanho
    que quiser (ex: 120px em vez de 200px). */
 .logo-placeholder {
-  width: 220px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto 1rem;
   display: flex;
   flex-direction: column;
@@ -135,7 +169,7 @@ input:focus-visible,
 }
 
 .edit-toolbar button {
-  background: transparent;
+  background: var(--cor-fundo);
   color: var(--cor-texto-fraco);
   border: 1px solid var(--cor-borda);
   font-family: var(--fonte-base);
@@ -169,9 +203,11 @@ body.modo-edicao [contenteditable="true"] {
    ========================================================================== */
 .comic-page {
   max-width: var(--largura-coluna);
-  margin: 1.5rem auto 0;
-  padding: 0 1rem;
+  margin: 1rem auto 1.5rem;
+  padding: 1rem 1rem 1.5rem;
   text-align: center;
+  background: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
 }
 
 .page-title {
@@ -315,12 +351,13 @@ body.modo-edicao [contenteditable="true"] {
    ========================================================================== */
 .site-footer {
   max-width: var(--largura-coluna);
-  margin: 2.5rem auto 0;
+  margin: 1rem auto 0;
   padding: 1rem;
   text-align: center;
   color: var(--cor-texto-fraco);
   font-size: 0.8rem;
-  border-top: 1px solid var(--cor-borda);
+  background: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
 }
 
 /* ==========================================================================
@@ -328,8 +365,10 @@ body.modo-edicao [contenteditable="true"] {
    ========================================================================== */
 .archive-page {
   max-width: 800px;
-  margin: 0 auto;
+  margin: 1.5rem auto;
   padding: 1rem 1.5rem 3rem;
+  background: var(--cor-fundo);
+  border: 1px solid var(--cor-borda);
 }
 
 .archive-page h1 {

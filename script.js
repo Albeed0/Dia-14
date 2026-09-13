@@ -89,10 +89,18 @@ if (document.getElementById("pageTitle")) {
     //
     // Por enquanto, deixamos só o placeholder com as dimensões sugeridas.
     // ------------------------------------------------------------------
-    el.panelPlaceholder.style.width = dados.larguraImg + "px";
-    el.panelPlaceholder.style.height = dados.alturaImg + "px";
-    el.placeholderDims.textContent =
-      `(${dados.larguraImg} × ${dados.alturaImg} — coloque sua imagem aqui)`;
+    if (paginaAtual === 0) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
+              src="Imagens/Pagina1.jpeg"
+              alt="Página 1">`;
+    } else {
+      el.panelPlaceholder.style.width = dados.larguraImg + "px";
+      el.panelPlaceholder.style.height = dados.alturaImg + "px";
+      el.placeholderDims.textContent =
+        `(${dados.larguraImg} × ${dados.alturaImg} — coloque sua imagem aqui)`;
+    }
+      
 
     // Texto de narração da página
     el.pageText.textContent = obterTextoSalvo(chaveTexto, dados.texto);
