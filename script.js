@@ -89,128 +89,162 @@ if (document.getElementById("pageTitle")) {
     //
     // Por enquanto, deixamos só o placeholder com as dimensões sugeridas.
     // ------------------------------------------------------------------
+ // Sempre busca o elemento do placeholder/imagem de novo, porque ele
+    // pode ter sido substituído por uma <img> em uma renderização
+    // anterior (senão a referência guardada em el.panelPlaceholder fica
+    // "velha" e as trocas de página seguintes param de funcionar).
+    el.panelPlaceholder = document.getElementById("panelPlaceholder");
+
+    // ------------------------------------------------------------------
+    // IMAGEM DE CADA PÁGINA: uma condição por página que já tem arte
+    // pronta. As páginas que não estiverem aqui caem no "else" final e
+    // continuam mostrando o placeholder tracejado normalmente.
+    // ------------------------------------------------------------------
     if (paginaAtual === 0) {
       el.panelPlaceholder.outerHTML =
         `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina1.jpeg"
               alt="Página 1">`;
-    } 
-    else if(paginaAtual === 1){
-      `<img class="panel-img" id="panelPlaceholder"
+    }
+    else if (paginaAtual === 1) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina2.jpeg"
               alt="Página 2">`;
     }
-       else if(paginaAtual === 2){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 2) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina3.jpeg"
               alt="Página 3">`;
     }
-       else if(paginaAtual === 3){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 3) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina4.jpeg"
               alt="Página 4">`;
     }
-       else if(paginaAtual === 4){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 4) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina5.jpeg"
               alt="Página 5">`;
     }
-       else if(paginaAtual === 5){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 5) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina6.jpeg"
               alt="Página 6">`;
     }
-       else if(paginaAtual === 6){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 6) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina7.jpeg"
               alt="Página 7">`;
     }
-       else if(paginaAtual === 7){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 7) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina8.jpeg"
               alt="Página 8">`;
     }
-       else if(paginaAtual === 8){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 8) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina9.jpeg"
               alt="Página 9">`;
     }
-       else if(paginaAtual === 9){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 9) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina10.jpeg"
               alt="Página 10">`;
     }
-       else if(paginaAtual === 10){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 10) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina11.jpeg"
               alt="Página 11">`;
     }
-       else if(paginaAtual === 11){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 11) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina12.jpeg"
               alt="Página 12">`;
     }
-       else if(paginaAtual === 12){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 12) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina13.jpeg"
               alt="Página 13">`;
     }
-       else if(paginaAtual === 13){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 13) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina14.jpeg"
               alt="Página 14">`;
     }
-       else if(paginaAtual === 14){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 14) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina15.jpeg"
               alt="Página 15">`;
     }
-       else if(paginaAtual === 15){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 15) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina16.jpeg"
               alt="Página 16">`;
     }
-       else if(paginaAtual === 16){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 16) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina17.jpeg"
               alt="Página 17">`;
     }
-       else if(paginaAtual === 17){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 17) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina18.jpeg"
               alt="Página 18">`;
     }
-       else if(paginaAtual === 18){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 18) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina19.jpeg"
               alt="Página 19">`;
     }
-       else if(paginaAtual === 19){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 19) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina20.jpeg"
               alt="Página 20">`;
     }
-       else if(paginaAtual === 20){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 20) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina21.jpeg"
               alt="Página 21">`;
     }
-       else if(paginaAtual === 21){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 21) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina22.jpeg"
               alt="Página 22">`;
     }
-       else if(paginaAtual === 22){
-      `<img class="panel-img" id="panelPlaceholder"
+    else if (paginaAtual === 22) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina23.jpeg"
               alt="Página 23">`;
     }
-       else if(paginaAtual === 23){
-      `<img class="panel-img" id="panelPlaceholder"
-              src="Imagens/Homenagem.jpeg"
+    else if (paginaAtual === 23) {
+      el.panelPlaceholder.outerHTML =
+        `<img class="panel-img" id="panelPlaceholder"
+              src="Imagens/Dedicatorio.jpeg"
               alt="Homenagem">`;
     }
-    else{
+    else {
       el.panelPlaceholder.style.width = dados.larguraImg + "px";
       el.panelPlaceholder.style.height = dados.alturaImg + "px";
       el.placeholderDims.textContent =
