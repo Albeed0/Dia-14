@@ -98,117 +98,117 @@ if (document.getElementById("pageTitle")) {
     else if(paginaAtual === 1){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina2.jpeg"
-              alt="Página 1">`;
+              alt="Página 2">`;
     }
        else if(paginaAtual === 2){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina3.jpeg"
-              alt="Página 1">`;
+              alt="Página 3">`;
     }
        else if(paginaAtual === 3){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina4.jpeg"
-              alt="Página 1">`;
+              alt="Página 4">`;
     }
        else if(paginaAtual === 4){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina5.jpeg"
-              alt="Página 1">`;
+              alt="Página 5">`;
     }
        else if(paginaAtual === 5){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina6.jpeg"
-              alt="Página 1">`;
+              alt="Página 6">`;
     }
        else if(paginaAtual === 6){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina7.jpeg"
-              alt="Página 1">`;
+              alt="Página 7">`;
     }
        else if(paginaAtual === 7){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina8.jpeg"
-              alt="Página 1">`;
+              alt="Página 8">`;
     }
        else if(paginaAtual === 8){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina9.jpeg"
-              alt="Página 1">`;
+              alt="Página 9">`;
     }
        else if(paginaAtual === 9){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina10.jpeg"
-              alt="Página 1">`;
+              alt="Página 10">`;
     }
        else if(paginaAtual === 10){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina11.jpeg"
-              alt="Página 1">`;
+              alt="Página 11">`;
     }
        else if(paginaAtual === 11){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina12.jpeg"
-              alt="Página 1">`;
+              alt="Página 12">`;
     }
        else if(paginaAtual === 12){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina13.jpeg"
-              alt="Página 1">`;
+              alt="Página 13">`;
     }
        else if(paginaAtual === 13){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina14.jpeg"
-              alt="Página 1">`;
+              alt="Página 14">`;
     }
        else if(paginaAtual === 14){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina15.jpeg"
-              alt="Página 1">`;
+              alt="Página 15">`;
     }
        else if(paginaAtual === 15){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina16.jpeg"
-              alt="Página 1">`;
+              alt="Página 16">`;
     }
        else if(paginaAtual === 16){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina17.jpeg"
-              alt="Página 1">`;
+              alt="Página 17">`;
     }
        else if(paginaAtual === 17){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina18.jpeg"
-              alt="Página 1">`;
+              alt="Página 18">`;
     }
        else if(paginaAtual === 18){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina19.jpeg"
-              alt="Página 1">`;
+              alt="Página 19">`;
     }
        else if(paginaAtual === 19){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina20.jpeg"
-              alt="Página 1">`;
+              alt="Página 20">`;
     }
        else if(paginaAtual === 20){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina21.jpeg"
-              alt="Página 1">`;
+              alt="Página 21">`;
     }
        else if(paginaAtual === 21){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina22.jpeg"
-              alt="Página 1">`;
+              alt="Página 22">`;
     }
        else if(paginaAtual === 22){
       `<img class="panel-img" id="panelPlaceholder"
               src="Imagens/Pagina23.jpeg"
-              alt="Página 1">`;
+              alt="Página 23">`;
     }
        else if(paginaAtual === 23){
       `<img class="panel-img" id="panelPlaceholder"
-              src="Imagens/Tributo.jpeg"
-              alt="Página 1">`;
+              src="Imagens/Homenagem.jpeg"
+              alt="Homenagem">`;
     }
     else{
       el.panelPlaceholder.style.width = dados.larguraImg + "px";
