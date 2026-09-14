@@ -30,7 +30,7 @@ const PAGINAS = [
     larguraImg: 650,
     alturaImg: 450,
     texto: "Acho que eu já falei várias vezes isso, mas quando eu vi o Olive te colocando no grupo\n" +
-           "Eu te achei um baita de um introsa ali, pq pra mim, aquele grupo era só de nós três\n" +
+           "Eu te achei um baita de um intruso  ali, pq pra mim, aquele grupo era só de nós três\n" +
            "Até que teve o dia que você me mandou a fatidica foto do Son e do Henchman(que eu achei esses tempos)" 
   },
   {
